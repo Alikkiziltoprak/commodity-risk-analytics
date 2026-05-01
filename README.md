@@ -4,25 +4,31 @@ A market risk analytics dashboard for energy commodities — WTI Crude Oil, Natu
 
 Built as a practical demonstration of quantitative risk management methods applied to energy markets.
 
+
+
+🚀 \*\*Live Demo:\*\* https://commodity-risk-analytics.streamlit.app/
+
+
+
 ## Features
 
-- **Historical VaR & CVaR** at 90%, 95%, 99% confidence levels
-- **Rolling annualised volatility** with configurable window
-- **Drawdown analysis** per commodity
-- **Correlation matrix** across commodities
-- **Portfolio-level VaR** with adjustable weights and diversification benefit calculation
-- **Normalised price performance** chart
-- **Live data mode** via EIA Open Data API (free key required)
-- **Demo mode** using Geometric Brownian Motion simulation (no API key needed)
+* **Historical VaR \& CVaR** at 90%, 95%, 99% confidence levels
+* **Rolling annualised volatility** with configurable window
+* **Drawdown analysis** per commodity
+* **Correlation matrix** across commodities
+* **Portfolio-level VaR** with adjustable weights and diversification benefit calculation
+* **Normalised price performance** chart
+* **Live data mode** via EIA Open Data API (free key required)
+* **Demo mode** using Geometric Brownian Motion simulation (no API key needed)
 
 ## Tech Stack
 
-- Python 3.10+
-- `streamlit` — dashboard UI
-- `plotly` — interactive charts
-- `pandas` / `numpy` — data manipulation
-- `scipy` — parametric VaR
-- EIA Open Data API — live commodity prices
+* Python 3.10+
+* `streamlit` — dashboard UI
+* `plotly` — interactive charts
+* `pandas` / `numpy` — data manipulation
+* `scipy` — parametric VaR
+* EIA Open Data API — live commodity prices
 
 ## Quick Start
 
@@ -47,25 +53,27 @@ Get a free API key at [eia.gov/opendata](https://www.eia.gov/opendata/), then se
 ```
 commodity-risk-analytics/
 ├── app.py              # Streamlit dashboard
-├── data_loader.py      # EIA API + GBM synthetic data
-├── risk_metrics.py     # VaR, CVaR, vol, drawdown, correlation
+├── data\_loader.py      # EIA API + GBM synthetic data
+├── risk\_metrics.py     # VaR, CVaR, vol, drawdown, correlation
 ├── requirements.txt
 └── README.md
 ```
 
 ## Risk Methodology
 
-| Metric | Method |
-|--------|--------|
-| VaR | Historical (non-parametric) |
-| CVaR / Expected Shortfall | Average loss beyond VaR threshold |
-| Volatility | Rolling standard deviation, annualised (×√252) |
-| Drawdown | Peak-to-trough from rolling maximum |
-| Portfolio VaR | Historical simulation with user-defined weights |
+|Metric|Method|
+|-|-|
+|VaR|Historical (non-parametric)|
+|CVaR / Expected Shortfall|Average loss beyond VaR threshold|
+|Volatility|Rolling standard deviation, annualised (×√252)|
+|Drawdown|Peak-to-trough from rolling maximum|
+|Portfolio VaR|Historical simulation with user-defined weights|
 
 ## Background
 
 This project reflects hands-on experience monitoring commodity price risk in an industrial setting (coal, natural gas, freight/navlun) and translates that domain knowledge into a quantitative risk framework consistent with industry standards (Basel III, FRTB).
 
----
+\---
+
 *Prices in demo mode are synthetic and generated using Geometric Brownian Motion calibrated to historical volatility ranges. Not financial advice.*
+
